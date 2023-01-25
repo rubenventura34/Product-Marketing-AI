@@ -2,10 +2,15 @@ import React from "react";
 import "./styles/ReviewItem.css";
 export interface ReviewItemInterface {
   user: string;
-  children?: string;
+  children?: React.ReactNode;
+  isLoading?: boolean;
 }
 
-const ReviewItem: React.FC<ReviewItemInterface> = ({ user, children }) => {
+const ReviewItem: React.FC<ReviewItemInterface> = ({
+  user,
+  children,
+  isLoading = false,
+}) => {
   return (
     <div className="bg-white dark:bg-gray-800 w-72 shadow-lg mx-auto rounded-xl p-4">
       <p className="text-gray-600 dark:text-white text-center">
