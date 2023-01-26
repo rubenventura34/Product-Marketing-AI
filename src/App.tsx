@@ -12,10 +12,15 @@ function App() {
   const [review, setReview] = useState();
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
+  const [productTags, setProductTags] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const getReview = async () => {
     setIsLoading(true);
-    const reponseReview = await generateReview(productName, productDescription);
+    const reponseReview = await generateReview(
+      productName,
+      productDescription,
+      productTags
+    );
     setReview(reponseReview);
     setIsLoading(false);
   };
@@ -33,7 +38,7 @@ function App() {
         placeholder="Enter product description..."
         onChange={(description) => setProductDescription(description)}
       />
-      <TagsInput />
+      <TagsInput onChange={(tags) => setProductTags(tags)} />
       <Button onClick={getReview} className="my-4" isLoading={isLoading}>
         Generate
       </Button>

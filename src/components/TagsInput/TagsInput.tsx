@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/TagsInput.css";
-export interface TagsInputInterface {}
+export interface TagsInputInterface {
+  onChange?: (tags: string[]) => void;
+}
 
-const TagsInput: React.FC<TagsInputInterface> = () => {
+const TagsInput: React.FC<TagsInputInterface> = ({ onChange }) => {
   const [tags, setTags] = useState<string[]>([]);
-  const addTag = (tag: string) => {
+  const addTag = (tag: string, elem: any) => {
     if (tags.includes(tag)) return;
     setTags([...tags, tag]);
+    elem.value = "";
   };
   const removeTag = (tagToDelete: string) => {
     setTags(tags.filter((tag) => tag !== tagToDelete));
   };
+  useEffect(() => {
+    onChange && onChange(tags);
+  }, [tags]);
   return (
     <div className=" relative ">
       <label>Tags</label>
@@ -30,7 +36,8 @@ const TagsInput: React.FC<TagsInputInterface> = () => {
         <input
           type="text"
           onKeyDown={(evt) =>
-            evt.key === "Enter" && addTag(evt.currentTarget.value)
+            evt.key === "Enter" &&
+            addTag(evt.currentTarget.value, evt.currentTarget)
           }
           className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           placeholder="Your tags"

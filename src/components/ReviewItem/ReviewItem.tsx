@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getRandomUser } from "../../services/getRandomUser";
 import "./styles/ReviewItem.css";
 export interface ReviewItemInterface {
   user: string;
@@ -11,6 +12,10 @@ const ReviewItem: React.FC<ReviewItemInterface> = ({
   children,
   isLoading = false,
 }) => {
+  const [uuser, setUser] = useState<any>();
+  useEffect(() => {
+    getRandomUser().then((randomUser) => setUser(randomUser));
+  }, []);
   return (
     <div className="bg-white dark:bg-gray-800 w-72 shadow-lg mx-auto rounded-xl p-4">
       <p className="text-gray-600 dark:text-white text-center">
@@ -20,7 +25,11 @@ const ReviewItem: React.FC<ReviewItemInterface> = ({
       </p>
       <div className="flex items-center mt-4">
         <div className="flex flex-col flex-1 justify-between ml-2 text-center">
-          <span className="text-sm font-semibold text-indigo-500">{user}</span>
+          {uuser && (
+            <span className="text-sm font-semibold text-indigo-500">
+              {uuser.firstName} {uuser.lastName}
+            </span>
+          )}
         </div>
       </div>
     </div>
