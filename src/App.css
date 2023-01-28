@@ -9,3 +9,6 @@
   font-weight: bold;
   margin-bottom: 0.5em;
 }
+.App {
+  max-width: 650px;
+}

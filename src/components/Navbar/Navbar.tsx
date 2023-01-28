@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
                     className={`text-gray-300 ${isActive(
                       "/product-pitch"
                     )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
-                    href="/#">
+                    href="/product-pitch">
                     Product Pitch
                   </a>
                 </div>
