@@ -17,7 +17,7 @@ const ReviewItem: React.FC<ReviewItemInterface> = ({
     getRandomUser().then((randomUser) => setUser(randomUser));
   }, []);
   return (
-    <div className="bg-white dark:bg-gray-800 w-72 shadow-lg mx-auto rounded-xl p-4">
+    <div className="break-inside bg-white dark:bg-gray-800 w-72 shadow-lg mx-auto rounded-xl p-4 flex flex-col justify-center">
       <p className="text-gray-600 dark:text-white text-center">
         <span className="text-lg font-bold text-indigo-500">“</span>
         {children}

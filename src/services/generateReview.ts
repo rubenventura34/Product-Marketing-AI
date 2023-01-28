@@ -17,6 +17,7 @@ export const generateReview = async (
       max_tokens: 50,
       return_likelihoods: "NONE",
       truncate: "END",
+      num_generations: 5,
       prompt: `Product Name: Kindle Oasis
 Description: The new Kindle Oasis features our best-in-class 7” 300 ppi Paperwhite display using the latest e-ink technology and a sleek ergonomic design with page-turn buttons—perfect for one-handed reading. Introducing adjustable warm light for a richer reading experience in any light.
 Feel: Good Experience
@@ -38,5 +39,7 @@ Review:`,
   };
 
   const response = await axios.request(options);
-  return response.data.generations[0].text.split("--")[0];
+  return response.data.generations.map(
+    (generation: any) => generation.text.split("--")[0]
+  );
 };

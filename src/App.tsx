@@ -7,9 +7,15 @@ import { TagsInput } from "./components/TagsInput";
 import { Button } from "./components/Button";
 import { ReviewItem } from "./components/ReviewItem";
 import { generateReview } from "./services/generateReview";
+import { Navbar } from "./components/Navbar";
+import { ProductForm } from "./components/ProductForm";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router";
+import { ReviewGeneratorPage } from "./pages/ReviewGeneratorPage";
+import { TargetAudiencePage } from "./pages/TargetAudiencePage";
 
 function App() {
-  const [review, setReview] = useState();
+  const [reviews, setReviews] = useState([]);
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productTags, setProductTags] = useState<string[]>([]);
@@ -21,28 +27,58 @@ function App() {
       productDescription,
       productTags
     );
-    setReview(reponseReview);
+    setReviews(reponseReview);
     setIsLoading(false);
   };
 
   return (
     <div className="App">
-      <h1>Product Review Generator</h1>
-      <InputWithLabel
-        label="Product Name"
-        placeholder="Enter product name..."
-        onChange={(name) => setProductName(name)}
-      />
-      <TextAreaWithLabel
-        label="Product Description"
-        placeholder="Enter product description..."
-        onChange={(description) => setProductDescription(description)}
-      />
-      <TagsInput onChange={(tags) => setProductTags(tags)} />
-      <Button onClick={getReview} className="my-4" isLoading={isLoading}>
-        Generate
-      </Button>
-      {review && <ReviewItem user="Juan Pedro">{review}</ReviewItem>}
+      {/* <h1
+        style={{ color: "#dddd6f", fontWeight: "bold", marginBottom: ".5em" }}>
+        Product Review
+        <br />
+        Generator
+      </h1>
+      <form
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          getReview();
+        }}>
+        <InputWithLabel
+          label="Product Name"
+          placeholder="Enter product name..."
+          onChange={(name) => setProductName(name)}
+          required
+        />
+        <TextAreaWithLabel
+          required
+          label="Product Description"
+          placeholder="Enter product description..."
+          onChange={(description) => setProductDescription(description)}
+        />
+        <TagsInput onChange={(tags) => setProductTags(tags)} />
+        <div className="flex justify-center">
+          <Button type="submit" className="my-4" isLoading={isLoading}>
+            Generate
+          </Button>
+        </div>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          {reviews &&
+            reviews.map((review, idx) => (
+              <ReviewItem key={idx} user="Juan Pedro">
+                {review}
+              </ReviewItem>
+            ))}
+        </div>
+      </form> */}
+      <BrowserRouter>
+        <Navbar />
+        <br />
+        <Routes>
+          <Route path="/" element={<ReviewGeneratorPage />} />
+          <Route path="/target-audience" element={<TargetAudiencePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
