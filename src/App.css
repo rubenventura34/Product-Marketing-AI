@@ -1,14 +1,39 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
+
 .sectionTitle {
   color: #dddd6f;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 .App {
-  max-width: 650px;
+  /*max-width: 650px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page {
+  width: 100%;
+  background-color: #0003;
+  padding: 1em;
+  border-radius: 1em;
+  max-width: 675px;
+}
+.page {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

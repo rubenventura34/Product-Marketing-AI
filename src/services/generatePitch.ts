@@ -18,7 +18,7 @@ export const generatePitch = async (
       return_likelihoods: "NONE",
       truncate: "END",
       num_generations: 1,
-      temperature: 0.8,
+      temperature: 0.5,
       prompt: `Product Name: Lay's
 Tags: potato chips, fast food
 Description: In good times, there are things that are always there, like our Lay's: crunchy and irresistible potatoes thinly sliced and deliciously seasoned.

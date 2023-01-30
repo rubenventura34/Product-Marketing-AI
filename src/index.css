@@ -28,12 +28,12 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgb(255 244 191 / 87%);
   /* Created with https://www.css-gradient.com */
-  background: #250a07;
-  background: -webkit-radial-gradient(center, #250a07, #010101);
-  background: -moz-radial-gradient(center, #250a07, #010101);
-  background: radial-gradient(ellipse at center, #250a07, #010101);
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
+  background: -moz-linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
+  background: linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

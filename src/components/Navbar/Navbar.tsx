@@ -15,11 +15,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
           <div className="flex items-center justify-between h-16">
             <div className=" flex items-center">
               <a className="flex-shrink-0" href="/">
-                <img
-                  className="w-8 h-8"
-                  src="https://www.tailwind-kit.com/icons/rocket.svg"
-                  alt="Workflow"
-                />
+                <img className="w-8 h-8" src="/rocket.png" alt="Workflow" />
               </a>
               <div className="hidden md:block">
                 <div className="flex items-baseline ml-10 space-x-4">
@@ -32,10 +28,10 @@ const Navbar: React.FC<NavbarInterface> = () => {
                   </Link>
                   <Link
                     className={`text-gray-300 ${isActive(
-                      "/reviews-generator"
-                    )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
-                    to="/">
-                    Reviews Generator
+                      "/product-pitch"
+                    )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+                    to="/product-pitch">
+                    Product Pitch
                   </Link>
                   <Link
                     className={`text-gray-300 ${isActive(
@@ -44,13 +40,13 @@ const Navbar: React.FC<NavbarInterface> = () => {
                     to="/target-audience">
                     Target Audience
                   </Link>
-                  <a
+                  <Link
                     className={`text-gray-300 ${isActive(
-                      "/product-pitch"
-                    )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
-                    href="/product-pitch">
-                    Product Pitch
-                  </a>
+                      "/reviews-generator"
+                    )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+                    to="/">
+                    Reviews Generator
+                  </Link>
                 </div>
               </div>
             </div>

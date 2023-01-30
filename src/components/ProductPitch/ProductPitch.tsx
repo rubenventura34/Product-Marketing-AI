@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Flag from "react-flagkit";
+import useTranslater from "../../hooks/useTranslater.hook";
+import { LangSelector } from "../LangSelector";
 import "./styles/ProductPitch.css";
 export interface ProductPitchInterface {
   pitch: string;
 }
 
 const ProductPitch: React.FC<ProductPitchInterface> = ({ pitch }) => {
+  const { text, setToLang, setText, loadingTranslation } = useTranslater(
+    pitch,
+    "en"
+  );
+  useEffect(() => {
+    setText(pitch);
+  }, [pitch]);
   return (
     <div className="px-4 py-5 rounded-t sm:px-6">
       <div className="overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-md">
@@ -20,10 +30,15 @@ const ProductPitch: React.FC<ProductPitchInterface> = ({ pitch }) => {
           <li>
             <a className="block hover:bg-gray-50 dark:hover:bg-gray-900">
               <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <p className="text-gray-700 text-md dark:text-white">
-                    {pitch}
-                  </p>
+                <div className="flex flex-col items-center justify-between">
+                  {text && (
+                    <>
+                      <LangSelector onChange={setToLang} />
+                      <p className="text-gray-700 text-md dark:text-white">
+                        {!loadingTranslation ? text : "Translating..."}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </a>

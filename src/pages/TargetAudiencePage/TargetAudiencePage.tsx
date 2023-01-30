@@ -19,7 +19,7 @@ const TargetAudiencePage: React.FC<TargetAudiencePageInterface> = () => {
     setIsLoading(false);
   };
   return (
-    <div className="targetaudiencepage">
+    <div className="targetaudiencepage page">
       <h1 className="sectionTitle">Target Audience</h1>
       <form
         onSubmit={(evt) => {

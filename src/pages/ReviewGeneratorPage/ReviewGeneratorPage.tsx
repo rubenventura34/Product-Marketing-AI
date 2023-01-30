@@ -21,7 +21,7 @@ const ReviewGeneratorPage: React.FC<ReviewGeneratorPageInterface> = () => {
     setIsLoading(false);
   };
   return (
-    <div className="reviewgeneratorpage">
+    <div className="reviewgeneratorpage page">
       <h1 className="sectionTitle">
         Product Review
         <br />

@@ -12,13 +12,18 @@ const ProductPitchPage: React.FC<ProductPitchPageInterface> = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [pitch, setPitch] = useState("");
   const getPitch = async () => {
-    setIsLoading(true);
-    const generatedPitch = await generatePitch(name, description, tags);
-    setPitch(generatedPitch);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+      const generatedPitch = await generatePitch(name, description, tags);
+      setPitch(generatedPitch);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
-    <div className="productpitchpage">
+    <div className="productpitchpage page">
       <h1 className="sectionTitle">Product Pitch</h1>
       <form
         onSubmit={(evt) => {
