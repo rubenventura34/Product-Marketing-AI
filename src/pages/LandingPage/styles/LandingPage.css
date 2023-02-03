@@ -1,0 +1,41 @@
+.landingpage {
+}
+.templatePreview {
+  padding: 0;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 1em;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.templatePreview img {
+  border-radius: 1em;
+  height: 100px;
+}
+.templatePreview.selected {
+  border: 2px solid white;
+}
+.templatePreview.selected::after {
+  position: absolute;
+  content: "✓";
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  line-height: 1.4;
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+}
+.landing-preview.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100%;
+}

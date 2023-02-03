@@ -2,7 +2,8 @@ import axios from "axios";
 export const generateReview = async (
   productName: string,
   productDescription: string,
-  tags?: string[]
+  tags?: string[],
+  len: number = 5
 ) => {
   const options = {
     method: "POST",
@@ -17,7 +18,7 @@ export const generateReview = async (
       max_tokens: 50,
       return_likelihoods: "NONE",
       truncate: "END",
-      num_generations: 5,
+      num_generations: len,
       prompt: `Product Name: Kindle Oasis
 Description: The new Kindle Oasis features our best-in-class 7” 300 ppi Paperwhite display using the latest e-ink technology and a sleek ergonomic design with page-turn buttons—perfect for one-handed reading. Introducing adjustable warm light for a richer reading experience in any light.
 Feel: Good Experience

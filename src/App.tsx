@@ -14,6 +14,7 @@ import { Route, Routes } from "react-router";
 import { ReviewGeneratorPage } from "./pages/ReviewGeneratorPage";
 import { TargetAudiencePage } from "./pages/TargetAudiencePage";
 import { ProductPitchPage } from "./pages/ProductPitchPage";
+import { LandingPage } from "./pages/LandingPage";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -79,6 +80,7 @@ function App() {
           <Route path="/" element={<ReviewGeneratorPage />} />
           <Route path="/target-audience" element={<TargetAudiencePage />} />
           <Route path="/product-pitch" element={<ProductPitchPage />} />
+          <Route path="/landing-page" element={<LandingPage />} />
         </Routes>
       </BrowserRouter>
     </div>

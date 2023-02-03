@@ -47,6 +47,13 @@ const Navbar: React.FC<NavbarInterface> = () => {
                     to="/">
                     Reviews Generator
                   </Link>
+                  <Link
+                    className={`text-gray-300 ${isActive(
+                      "/landing-page"
+                    )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+                    to="/landing-page">
+                    Landing page
+                  </Link>
                 </div>
               </div>
             </div>

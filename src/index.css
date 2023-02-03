@@ -21,6 +21,14 @@
     }
   }
 }
+.masonry-sm {
+  column-gap: 1.5em;
+  column-count: 2;
+}
+.masonry-md {
+  column-gap: 1.5em;
+  column-count: 3;
+}
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -30,10 +38,8 @@
   color-scheme: light dark;
   color: rgb(255 244 191 / 87%);
   /* Created with https://www.css-gradient.com */
-  background: #0f0c29;
-  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
-  background: -moz-linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
-  background: linear-gradient(to right, #0f0c29, #302b63, #0f0c29);
+  background: #1b2834;
+  background: linear-gradient(to right, #1b2834, #324b60, #1b2834);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -53,10 +59,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -71,7 +76,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
