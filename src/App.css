@@ -48,6 +48,21 @@
 .regenerate-section button {
   height: fit-content;
 }
+.border-bottom-gradient::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: -0.5em;
+  left: 0;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
 
 @keyframes fadeInAnimation {
   0% {

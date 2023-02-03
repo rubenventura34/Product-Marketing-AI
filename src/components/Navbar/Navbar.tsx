@@ -20,35 +20,35 @@ const Navbar: React.FC<NavbarInterface> = () => {
               <div className="hidden md:block">
                 <div className="flex items-baseline ml-10 space-x-4">
                   <Link
-                    className={`text-gray-300 ${isActive(
+                    className={`text-gray-500 ${isActive(
                       "/"
                     )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
                     to="/">
                     Home
                   </Link>
                   <Link
-                    className={`text-gray-300 ${isActive(
+                    className={`text-gray-500 ${isActive(
                       "/product-pitch"
                     )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
                     to="/product-pitch">
                     Product Pitch
                   </Link>
                   <Link
-                    className={`text-gray-300 ${isActive(
+                    className={`text-gray-500 ${isActive(
                       "/target-audience"
                     )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
                     to="/target-audience">
                     Target Audience
                   </Link>
                   <Link
-                    className={`text-gray-300 ${isActive(
+                    className={`text-gray-500 ${isActive(
                       "/reviews-generator"
                     )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
-                    to="/">
+                    to="/reviews-generator">
                     Reviews Generator
                   </Link>
                   <Link
-                    className={`text-gray-300 ${isActive(
+                    className={`text-gray-500 ${isActive(
                       "/landing-page"
                     )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
                     to="/landing-page">

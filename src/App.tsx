@@ -15,6 +15,7 @@ import { ReviewGeneratorPage } from "./pages/ReviewGeneratorPage";
 import { TargetAudiencePage } from "./pages/TargetAudiencePage";
 import { ProductPitchPage } from "./pages/ProductPitchPage";
 import { LandingPage } from "./pages/LandingPage";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -77,8 +78,9 @@ function App() {
         <Navbar />
         <br />
         <Routes>
-          <Route path="/" element={<ReviewGeneratorPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/target-audience" element={<TargetAudiencePage />} />
+          <Route path="/reviews-generator" element={<ReviewGeneratorPage />} />
           <Route path="/product-pitch" element={<ProductPitchPage />} />
           <Route path="/landing-page" element={<LandingPage />} />
         </Routes>
