@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import productExample from "../data/product.example.json";
 export interface IProductInfo {
   name: string;
   description: string;
@@ -11,6 +11,7 @@ export interface IProductInfo {
   addTag: (name: string) => void;
   removeTag: (name: string) => void;
   setProductTags: (tags: string[]) => void;
+  setExample: () => void;
 }
 
 export interface IUserStore {
@@ -29,7 +30,18 @@ export const useProductStore = create<IProductInfo>((set) => ({
     set((state) => ({ description })),
   setProductImage: (urlImage: string) => set((state) => ({ urlImage })),
   setProductTags: (tags: string[]) => set((state) => ({ tags })),
-  addTag: (tag: string) => set((state) => ({ tags: [...state.tags, tag] })),
+  addTag: (tag: string) =>
+    set((state) => {
+      if (state.tags.includes(tag)) return {};
+      return { tags: [...state.tags, tag] };
+    }),
   removeTag: (tag: string) =>
-    set((state) => ({ tags: state.tags.filter((t) => t !== tag) })),
+    set((state) => {
+      return { tags: state.tags.filter((t) => t !== tag) };
+    }),
+  setExample: () =>
+    set((state) => ({
+      ...productExample,
+      tags: productExample.tags.split(","),
+    })),
 }));

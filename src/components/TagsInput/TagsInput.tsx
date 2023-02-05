@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from "react";
 import "./styles/TagsInput.css";
 export interface TagsInputInterface {
+  tags?: string[];
+  onAdd?: (value: string) => void;
+  onRemove?: (value: string) => void;
   onChange?: (tags: string[]) => void;
 }
 
-const TagsInput: React.FC<TagsInputInterface> = ({ onChange }) => {
-  const [tags, setTags] = useState<string[]>([]);
+const TagsInput: React.FC<TagsInputInterface> = ({
+  onChange,
+  tags,
+  onAdd,
+  onRemove,
+}) => {
+  /*   const [tags, setTags] = useState<string[]>([]);
+
   const addTag = (tag: string, elem: any) => {
+    console.log()
     if (tags.includes(tag)) return;
     setTags([...tags, tag]);
     elem.value = "";
   };
   const removeTag = (tagToDelete: string) => {
     setTags(tags.filter((tag) => tag !== tagToDelete));
-  };
-  useEffect(() => {
-    onChange && onChange(tags);
-  }, [tags]);
+  }; */
+
   return (
     <div className=" relative ">
       <label>Tags</label>
@@ -35,23 +43,26 @@ const TagsInput: React.FC<TagsInputInterface> = ({ onChange }) => {
         </span>
         <input
           type="text"
-          onKeyDown={(evt) =>
-            evt.key === "Enter" &&
-            addTag(evt.currentTarget.value, evt.currentTarget)
-          }
+          onKeyDown={(evt) => {
+            if (evt.key === "Enter" || evt.key === ",") {
+              evt.preventDefault();
+              onAdd && onAdd(evt.currentTarget.value);
+              evt.currentTarget.value = "";
+            }
+          }}
           className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           placeholder="Your tags (optional)"
         />
       </div>
 
-      <div className="mt-3">
-        {tags.map((tag, idx) => (
+      <div className="mt-3 flex gap-2 flex-wrap justify-center">
+        {tags?.map((tag, idx) => (
           <span
             key={idx}
-            className="px-4 py-2  text-base rounded-full text-white  bg-indigo-500 ">
+            className="px-4 py-1 text-base rounded-full text-white  bg-indigo-500 ">
             {tag}
             <button
-              onClick={() => removeTag(tag)}
+              onClick={() => onRemove && onRemove(tag)}
               className="bg-transparent hover px-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
