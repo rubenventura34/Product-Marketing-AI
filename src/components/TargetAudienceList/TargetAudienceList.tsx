@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getImageFromText } from "../../services/getImageFromText";
 import "./styles/TargetAudienceList.css";
 export interface TargetAudienceListInterface {
   audience: any[];
 }
+
+const TextGeneratedImage = ({ text }: { text: string }) => {
+  const [src, setSrc] = useState("");
+
+  const getImage = () => {
+    getImageFromText(text).then((imageUrl) => {
+      setSrc(imageUrl);
+    });
+  };
+
+  useEffect(() => {
+    getImage();
+  }, [text]);
+
+  return <img style={{ width: "100%" }} src={src}></img>;
+};
 
 const TargetAudienceList: React.FC<TargetAudienceListInterface> = ({
   audience,
@@ -20,8 +37,8 @@ const TargetAudienceList: React.FC<TargetAudienceListInterface> = ({
         </div>
         <ul className="divide-y divide-gray-200">
           {audience &&
-            audience.map((item) => (
-              <li>
+            audience.map((item, idx) => (
+              <li key={idx}>
                 <a className="block hover:bg-gray-50 dark:hover:bg-gray-900">
                   <div className="px-4 py-4 sm:px-6">
                     <div className="flex items-center justify-between">
@@ -31,6 +48,7 @@ const TargetAudienceList: React.FC<TargetAudienceListInterface> = ({
                     </div>
                   </div>
                 </a>
+                <TextGeneratedImage text={item} />
               </li>
             ))}
         </ul>
