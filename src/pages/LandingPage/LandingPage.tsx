@@ -77,6 +77,11 @@ const LandingPage: React.FC<LandingPageInterface> = () => {
   return (
     <div className="landingpage page">
       <h1 className="sectionTitle">Landing Page</h1>
+      <br />
+      <p className="text-white">
+        Generate a landing page easily just by entering the most important
+        information about your product, choose a template and generate it.
+      </p>
       <ProductForm />
       <InputWithLabel
         label="Product Image"

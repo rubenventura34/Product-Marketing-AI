@@ -27,6 +27,10 @@ const ReviewGeneratorPage: React.FC<ReviewGeneratorPageInterface> = () => {
         <br />
         Generator
       </h1>
+      <p className="text-white">
+        You already have a landing page but you still do not have customers who
+        rate your product, show these reviews on a website to generate interest.
+      </p>
       <form
         onSubmit={(evt) => {
           evt.preventDefault();

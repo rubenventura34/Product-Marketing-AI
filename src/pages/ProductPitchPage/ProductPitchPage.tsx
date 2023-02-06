@@ -25,6 +25,11 @@ const ProductPitchPage: React.FC<ProductPitchPageInterface> = () => {
   return (
     <div className="productpitchpage page">
       <h1 className="sectionTitle">Product Pitch</h1>
+      <br />
+      <p className="text-white">
+        Generate a way to present your product to your customers or potential
+        investors with persuasive language.
+      </p>
       <form
         onSubmit={(evt) => {
           evt.preventDefault();

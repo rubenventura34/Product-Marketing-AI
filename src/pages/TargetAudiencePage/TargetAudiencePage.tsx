@@ -21,6 +21,10 @@ const TargetAudiencePage: React.FC<TargetAudiencePageInterface> = () => {
   return (
     <div className="targetaudiencepage page">
       <h1 className="sectionTitle">Target Audience</h1>
+      <br />
+      <p className="text-white">
+        Do you want to know which audience you should focus your product on?
+      </p>
       <form
         onSubmit={(evt) => {
           evt.preventDefault();

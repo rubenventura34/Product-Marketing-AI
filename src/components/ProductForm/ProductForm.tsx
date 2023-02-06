@@ -28,6 +28,7 @@ const ProductForm: React.FC<ProductFormInterface> = () => {
     <div className="productform">
       <div className="flex justify-end">
         <button
+          title="Put an example product"
           type="button"
           className="py-1 px-2 flex justify-center items-center hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-12 h-12 rounded-lg"
           onClick={() => setExample()}>
