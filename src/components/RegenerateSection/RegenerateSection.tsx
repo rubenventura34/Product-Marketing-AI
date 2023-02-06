@@ -12,7 +12,7 @@ const RegenerateSection: React.FC<RegenerateSectionInterface> = ({
       <button
         onClick={() => onClick && onClick()}
         title="Regenerate Section"
-        className="flex items-center p-4  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+        className="flex items-center p-4  transition ease-in duration-200 uppercase rounded-full  bg-pink-800 text-white border-2 border-gray-100 focus:outline-none">
         <svg
           className="w-3 h-3 shadow-3 dark:text-white"
           fill="none"

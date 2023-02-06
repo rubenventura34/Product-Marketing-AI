@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BiCollapse, BiExpand } from "react-icons/bi";
 import { Button } from "../../components/Button";
 import { InputWithLabel } from "../../components/InputWithLabel";
 import { ProductForm } from "../../components/ProductForm";
@@ -141,14 +142,18 @@ const LandingPage: React.FC<LandingPageInterface> = () => {
           onClick={() => {
             setFullscreenPreview(!fullscreenPreview);
           }}
-          className="absolute right-0 top-0 text-white"
+          className="absolute right-0 top-0 text-white px-2 py-1 bg-gray-500 shadow"
           style={{
             cursor: "pointer",
             zIndex: 4,
-            marginTop: "4em",
-            marginRight: "1em",
+            marginTop: "0em",
+            marginRight: "0em",
           }}>
-          Full Screen
+          {!fullscreenPreview ? (
+            <BiExpand size={28} />
+          ) : (
+            <BiCollapse size={28} />
+          )}
         </span>
       </div>
       {/*  <iframe
