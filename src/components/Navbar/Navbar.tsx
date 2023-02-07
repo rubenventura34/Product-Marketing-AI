@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
   };
   return (
     <div className="w-full">
-      <nav className="bg-white dark:bg-gray-800  shadow rounded-2xl sm:w-100">
+      <nav className="bg-gray-300 dark:bg-gray-800  shadow rounded-2xl sm:w-100">
         <div className="px-8 mx-auto max-w-7xl">
           <div className="flex items-center justify-between h-16">
             <div className=" flex items-center">

@@ -17,6 +17,7 @@ import { ProductPitchPage } from "./pages/ProductPitchPage";
 import { LandingPage } from "./pages/LandingPage";
 import { HomePage } from "./pages/HomePage";
 import { AdGeneratorPage } from "./pages/AdGeneratorPage";
+import { Footer } from "./components/Footer";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -36,56 +37,24 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {/* <h1
-        style={{ color: "#dddd6f", fontWeight: "bold", marginBottom: ".5em" }}>
-        Product Review
-        <br />
-        Generator
-      </h1>
-      <form
-        onSubmit={(evt) => {
-          evt.preventDefault();
-          getReview();
-        }}>
-        <InputWithLabel
-          label="Product Name"
-          placeholder="Enter product name..."
-          onChange={(name) => setProductName(name)}
-          required
-        />
-        <TextAreaWithLabel
-          required
-          label="Product Description"
-          placeholder="Enter product description..."
-          onChange={(description) => setProductDescription(description)}
-        />
-        <TagsInput onChange={(tags) => setProductTags(tags)} />
-        <div className="flex justify-center">
-          <Button type="submit" className="my-4" isLoading={isLoading}>
-            Generate
-          </Button>
-        </div>
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
-          {reviews &&
-            reviews.map((review, idx) => (
-              <ReviewItem key={idx} user="Juan Pedro">
-                {review}
-              </ReviewItem>
-            ))}
-        </div>
-      </form> */}
+    <div className="flex flex-col items-center">
       <BrowserRouter>
-        <Navbar />
-        <br />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/target-audience" element={<TargetAudiencePage />} />
-          <Route path="/ad-generator" element={<AdGeneratorPage />} />
-          <Route path="/reviews-generator" element={<ReviewGeneratorPage />} />
-          <Route path="/product-pitch" element={<ProductPitchPage />} />
-          <Route path="/landing-page" element={<LandingPage />} />
-        </Routes>
+        <div className="App">
+          <Navbar />
+          <br />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/target-audience" element={<TargetAudiencePage />} />
+            <Route path="/ad-generator" element={<AdGeneratorPage />} />
+            <Route
+              path="/reviews-generator"
+              element={<ReviewGeneratorPage />}
+            />
+            <Route path="/product-pitch" element={<ProductPitchPage />} />
+            <Route path="/landing-page" element={<LandingPage />} />
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
