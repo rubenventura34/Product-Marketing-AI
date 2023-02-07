@@ -3,6 +3,7 @@ import { Button } from "../../components/Button";
 import "./styles/HomePage.css";
 
 import {
+  FcAdvertising,
   FcBusinessman,
   FcFaq,
   FcMultipleDevices,
@@ -77,6 +78,26 @@ const HomePage: React.FC<HomePageInterface> = () => {
             <Link
               className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               to="/reviews-generator">
+              GO
+            </Link>
+          </div>
+        </div>
+
+        <div className="w-64 hover:bg-gray-900 shadow p-4 py-6 bg-white  dark:bg-gray-800  shadow-lg rounded-2xl">
+          <div className="flex flex-col items-center justify-center">
+            <div className="relative w-24 h-24 rounded-full flex justify-center items-center text-gray-800">
+              <FcAdvertising size="84" />
+            </div>
+            <p className="mt-2 mb-4 text-xl dark:text-white font-medium text-gray-800">
+              Ads Generator
+            </p>
+            <p className="px-2 text-xs text-center text-gray-400">
+              Generate ads to promote your product on social media
+            </p>
+            <br />
+            <Link
+              className="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              to="/ad-generator">
               GO
             </Link>
           </div>

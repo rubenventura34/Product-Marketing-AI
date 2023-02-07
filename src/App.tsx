@@ -16,6 +16,7 @@ import { TargetAudiencePage } from "./pages/TargetAudiencePage";
 import { ProductPitchPage } from "./pages/ProductPitchPage";
 import { LandingPage } from "./pages/LandingPage";
 import { HomePage } from "./pages/HomePage";
+import { AdGeneratorPage } from "./pages/AdGeneratorPage";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -80,6 +81,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/target-audience" element={<TargetAudiencePage />} />
+          <Route path="/ad-generator" element={<AdGeneratorPage />} />
           <Route path="/reviews-generator" element={<ReviewGeneratorPage />} />
           <Route path="/product-pitch" element={<ProductPitchPage />} />
           <Route path="/landing-page" element={<LandingPage />} />

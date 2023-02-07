@@ -68,6 +68,13 @@ const Navbar: React.FC<NavbarInterface> = () => {
                   </Link>
                   <Link
                     className={`text-gray-500 ${isActive(
+                      "/ad-generator"
+                    )} hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+                    to="/ad-generator">
+                    Ads Generator
+                  </Link>
+                  <Link
+                    className={`text-gray-500 ${isActive(
                       "/landing-page"
                     )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
                     to="/landing-page">
@@ -151,6 +158,13 @@ const Navbar: React.FC<NavbarInterface> = () => {
                 )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 block rounded-md text-base font-medium`}
                 to="/reviews-generator">
                 Reviews Generator
+              </Link>
+              <Link
+                className={`text-gray-500 ${isActive(
+                  "/ad-generator"
+                )}  hover:text-gray-800 dark:hover:text-white px-3 py-2 block rounded-md text-base font-medium`}
+                to="/ad-generator">
+                Ads Generator
               </Link>
               <Link
                 className={`text-gray-500 ${isActive(

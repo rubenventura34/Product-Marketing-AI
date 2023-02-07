@@ -1,0 +1,1 @@
+export { default as AdPost } from './AdPost';
